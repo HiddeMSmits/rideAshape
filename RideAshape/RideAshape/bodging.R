@@ -8,7 +8,7 @@ library(units)
 library(plotKML)
 library(spdep)
 library(xml2)
-apiKey <- "5b3ce3597851110001cf6248bfd98c177f5942f4bcc015f44e0a711f"
+apiKey <- #getAkey
 t <- ors_api_key(apiKey)
 
 gpxFile <- '/Users/Hidde/RideADick/python/gpxFiles/penis.gpx'
