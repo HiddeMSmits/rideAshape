@@ -6,19 +6,19 @@ library(plotKML)
 # library(spdep)
 library(shiny)
 library(xml2)
-source("/Users/Hidde/RideADick/RideADick/rideADick/helpers.R")
+source("/Users/Hidde/RideAshape/RideAshape/rideAshape/helpers.R")
 
-apiKey <- "5b3ce3597851110001cf6248bfd98c177f5942f4bcc015f44e0a711f"
+apiKey <- #getAkey
 t <- ors_api_key(apiKey)
 
-gpxFile <- '/Users/Hidde/RideADick/python/gpxFiles/penis.gpx'
+gpxFile <- '/Users/Hidde/RideAshape/python/gpxFiles/shape.gpx'
 f <- readGPX(gpxFile)
 gpxCoord <- f$waypoints
 
 
 # Define UI ----
 ui <- fluidPage(
-  titlePanel("Ride A Dick"),
+  titlePanel("Ride A shape"),
   
   sidebarLayout(
     sidebarPanel(
@@ -56,7 +56,7 @@ ui <- fluidPage(
 
 # Define server logic ----
 server <- function(input, output) {
-  # gpxFile <- '/Users/Hidde/RideADick/python/gpxFiles/penis.gpx'
+  # gpxFile <- '/Users/Hidde/RideAshape/python/gpxFiles/shape.gpx'
   # f <- readGPX(gpxFile)
   # gpxCoord <- f$waypoints
   # userCoordinates = c('lon' = 7.148427,'lat' = 52.084989)
