@@ -17,8 +17,8 @@ createNewCoord <- function(gpx, userCoordinates, sizeFactor = 1){
   return(newCoord)
 }
 
-createMultipleDicks <- function(gpx, userCoordinates, sizeFactor = 1){
-  dickList <- list(rbind(createNewCoord(gpx, userCoordinates, sizeFactor = sizeFactor), userCoordinates[c(2,1)]))
+createMultipleshapes <- function(gpx, userCoordinates, sizeFactor = 1){
+  shapeList <- list(rbind(createNewCoord(gpx, userCoordinates, sizeFactor = sizeFactor), userCoordinates[c(2,1)]))
   numberOfIterations <- 10
   divider <- 3
   
@@ -34,9 +34,9 @@ createMultipleDicks <- function(gpx, userCoordinates, sizeFactor = 1){
     newGpx <- gpx[newOrder,]
     newGpx <- rbind(newGpx, userCoordinates[c(2,1)])
     print(newGpx)
-    dickList[[i+1]] <- createNewCoord(newGpx, userCoordinates, sizeFactor = sizeFactor)
+    shapeList[[i+1]] <- createNewCoord(newGpx, userCoordinates, sizeFactor = sizeFactor)
   }
-  return(dickList)
+  return(shapeList)
 }
 
 createHeightProfile <- function(coord){
@@ -82,9 +82,9 @@ createHeightProfile <- function(coord){
     labs(x = "Distance", y = "Height")
 }
 
-fitDickModel <- function(){}
+fitshapeModel <- function(){}
 
-rotateDick <- function(coords, degrees, userCoordinates){
+rotateShape <- function(coords, degrees, userCoordinates){
   rad=-degrees*pi/180
   
   lonRot = userCoordinates[['lon']]
